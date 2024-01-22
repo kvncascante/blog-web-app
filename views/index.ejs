@@ -1,0 +1,41 @@
+<%- include("partials/header.ejs") %>
+
+<!-- aqui ponemos la pantalla y una seccion de vistas para poner el listado, cada vez q se crea el post 
+aparece acá
+
+-->
+<h1>hola mundo</h1>
+
+
+<section class="post-views">
+
+  <h1>Posts views</h1>
+<% if(postData.length>0){ %>
+    <ul>
+        <% postData.forEach((data) =>{ %>
+            <li><%= data.p_name %></li>
+            <li><%= data.p_title %></li>
+            <li><%= data.p_comment %></li>
+        <% }); %>
+    </ul>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Launch static backdrop modal
+    </button>
+    
+
+
+<% }else{%>
+    <h2>No posts to display</h2>
+    
+
+<% } %>
+
+
+</section>
+
+
+<%- include("edit.ejs") %> 
+
+
+<%- include("partials/footer.ejs") %> 
